@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="calc">
+    <div appDisplay [input]="valueToDisplay" class="display">
+      {{ valueToDisplay }}
+    </div>
+    <div class="key util" (click)="resetDisplayedValue()">
+      {{ validToReset && valueToDisplay !== '0' ? 'C' : 'AC' }}
+    </div>
+    <div
+      *ngFor="let key of keys"
+      [id]="key.id"
+      [class]="key.className"
+      (click)="key.functionToCallWhenClicked(key.displaySymbol)"
+    >
+      {{ key.displaySymbol }}
+    </div>
+    <!-- <div class="key util">±</div>
+    <div class="key util">%</div>
+    <div class="key arithmetic">÷</div>
+    <div class="key digit" (click)="addDigitToDisplayedValue('7')">7</div>
+    <div class="key digit" (click)="addDigitToDisplayedValue('8')">8</div>
+    <div class="key digit" (click)="addDigitToDisplayedValue('9')">9</div>
+    <div class="key arithmetic">×</div>
+    <div class="key digit" (click)="addDigitToDisplayedValue('4')">4</div>
+    <div class="key digit" (click)="addDigitToDisplayedValue('5')">5</div>
+    <div class="key digit" (click)="addDigitToDisplayedValue('6')">6</div>
+    <div class="key arithmetic">-</div>
+    <div class="key digit" (click)="addDigitToDisplayedValue('1')">1</div>
+    <div class="key digit" (click)="addDigitToDisplayedValue('2')">2</div>
+    <div class="key digit" (click)="addDigitToDisplayedValue('3')">3</div>
+    <div class="key arithmetic">+</div>
+    <div id="zero" class="key digit" (click)="addDigitToDisplayedValue('0')">
+      0
+    </div>
+    <div class="key digit">.</div>
+    <div class="key arithmetic">=</div> -->
+  </div>
+</div>
